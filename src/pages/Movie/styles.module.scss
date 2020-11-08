@@ -1,0 +1,60 @@
+.movie {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  padding-top: 25px;
+  .poster {
+    border-radius: 10px;
+  }
+}
+.right {
+  max-width: 635px;
+  width: 100%;
+}
+
+.title {
+  font-family: Playfair Display;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 67.77px;
+  line-height: 90px;
+
+  color: #1b1d1c;
+}
+
+.overview {
+  padding-top: 22px;
+  .plot {
+    padding-top: 6px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #1b1d1c;
+  }
+}
+
+.tags {
+  padding-top: 12px;
+  display: flex;
+  & > div:not(last-child) {
+    margin-right: 24px;
+  }
+}
+
+.rating {
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+  img {
+    padding-right: 16px;
+  }
+  font-size: 16px;
+  line-height: 24px;
+  color: #1b1d1c;
+  font-weight: 500;
+  .accent {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}

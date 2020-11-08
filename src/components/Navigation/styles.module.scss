@@ -1,0 +1,24 @@
+.nav {
+  margin-left: 50px;
+
+  display: flex;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+  .item {
+    padding: 5px 3px;
+    text-align: center;
+    text-decoration: none;
+    &:visited {
+      color: inherit;
+    }
+    &:not(:last-child) {
+      margin-right: 28px;
+    }
+    &.active {
+      font-weight: 500;
+      border-bottom: 2px solid var(--color-accent);
+    }
+  }
+}

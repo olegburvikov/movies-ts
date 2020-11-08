@@ -1,0 +1,46 @@
+//   <div className={styles.content}>
+//     <div className={styles.title}>{title}</div>
+//     <div className={styles.tab}>{year}</div>
+//   </div>
+// </div>
+
+.movie {
+  display: flex;
+  padding: 20px 10px;
+  border-bottom: 1px solid #d9d7c6;
+  .poster {
+    padding-right: 35px;
+    img {
+      width: 120px;
+      height: 120px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+  }
+  .content {
+    .title {
+      font-family: var(--accent-font);
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 44px;
+      color: #1b1d1c;
+      padding-bottom: 7px;
+    }
+  }
+  .tab {
+    background: #efe8d8;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 8px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #1b1d1c;
+  }
+
+  // effects
+  transition: background 0.3s;
+  cursor: pointer;
+  &:hover {
+    background: rgba(255, 255, 255, 0.397);
+  }
+}
