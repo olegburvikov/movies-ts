@@ -20,7 +20,6 @@
   font-weight: bold;
   font-size: 67.77px;
   line-height: 90px;
-
   color: #1b1d1c;
 }
 
@@ -56,5 +55,34 @@
   .accent {
     font-size: 24px;
     line-height: 28px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .movie {
+    flex-direction: column;
+  }
+  .left {
+    display: flex;
+    justify-content: center;
+    padding-top: 0px;
+  }
+  .right {
+    padding-bottom: 30px;
+  }
+
+  .tags {
+    overflow: auto;
+    padding-bottom: 15px;
+    & > div {
+      white-space: nowrap;
+      &:not(last-child) {
+        margin-right: 14px;
+      }
+    }
+  }
+
+  .rating {
+    padding-top: 14px;
   }
 }

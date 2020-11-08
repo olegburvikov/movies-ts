@@ -24,8 +24,9 @@ export const getRequest = async (url: string) => {
   return response.json();
 }
 
-export const getMovies = async (page: number) => {
-  const result = await getRequest(`&s=murder&type=movie&plot=full&page=${page}`);
+export const getMovies = async (text: string) => {
+  const result = await getRequest(`&s=${text}&type=movie&plot=full&page=${1}`);
+  if(result.Response === "False") return [];
   return result.Search.map((movie: IDataMoviePreview): IMoviePreview => ({
     poster: movie.Poster,
     title: movie.Title,
@@ -45,6 +46,7 @@ export const getMovieById = async (id: string) => {
     imdbRating: result.imdbRating,
     plot: result.Plot,
     poster: result.Poster,
+    country: result.Country
   }
 }
 

@@ -18,6 +18,7 @@ export interface IMovie {
   imdbRating: string
   plot: string
   poster: string
+  country: string
 } 
 
 export const Movie = () => {
@@ -31,6 +32,7 @@ export const Movie = () => {
     imdbRating: '',
     plot: '',
     poster: '',
+    country: '',
   });
 
   React.useEffect(() => {
@@ -51,6 +53,7 @@ export const Movie = () => {
           <Tag>{movie.released}</Tag>
           <Tag>{movie.genre}</Tag>
           <Tag>{movie.runtime}</Tag>
+          <Tag>{movie.country}</Tag>
         </div>
 
         <div className={styles.rating}>
