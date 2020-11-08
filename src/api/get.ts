@@ -1,6 +1,6 @@
 
 enum API_CONST {
-  BASE = 'http://www.omdbapi.com/?apikey=',
+  BASE = 'https://www.omdbapi.com/?apikey=',
   KEY = 'b72b5005',
 }
 
