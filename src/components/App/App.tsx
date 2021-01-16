@@ -1,7 +1,7 @@
 import React from 'react';
 import 'normalize.css';
 import Header from '../Header/Header';
-import {Redirect, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Movies from '../../pages/Movies';
 import { Movie } from '../../pages/Movie/Movie';
 
@@ -11,9 +11,8 @@ const App: React.FC = () => {
         <div className="container">
           <Header />
           <Switch>
-            <Route exact path='/movies' component={Movies} />
+            <Route exact path='/' component={Movies} />
             <Route exact path='/movie/:id' component={Movie} />
-            <Redirect to="/movies" />
           </Switch>
         </div>
       </div>
