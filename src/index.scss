@@ -16,6 +16,13 @@ body,
   font-family: var(--primart-font);
   font-weight: 400;
 }
+@media screen and (max-width: 700px) {
+  html,
+  body,
+  #root, .app {
+    height: unset;
+  }
+}
 
 :root {
   --color-bg: #f9f7e8;
