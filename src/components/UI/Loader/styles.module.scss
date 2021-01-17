@@ -12,7 +12,7 @@
   width: 1em;
   height: 1em;
   border-radius: 0.5em;
-  background: #333;
+  background: #17C37B;
   position: absolute;
   animation-duration: 0.5s;
   animation-timing-function: ease;
@@ -58,5 +58,5 @@
 
 .dot4 {
   animation-name: reveal;
-  animation-direction: reverse; /* thx @HugoGiraudel */
+  animation-direction: reverse;
 }

@@ -1,36 +1,31 @@
 import React from 'react'
 import { IMoviePreview } from '../api/get'
-import MoviePreview from '../components/MoviePreview/MoviePreview';
-import {useDispatch, useSelector} from "react-redux";
-import {fetchMoviesList} from "../redux/actions/movies.action";
-import {RootState} from "../redux/reducers/root.reducer";
+import MoviePreview from '../components/MoviePreview/MoviePreview'
+import { useSelector } from 'react-redux'
+import { RootState } from '../redux/reducers/root.reducer'
+import Preview from '../components/Preview/Preview'
+
+type MoviesList = null | IMoviePreview[]
 
 const Movies: React.FC = () => {
+  const movies: MoviesList = useSelector(
+    (state: RootState) => state.movies.list
+  )
 
- const dispatch = useDispatch();
- const movies: IMoviePreview[] = useSelector((state: RootState) => state.movies.list);
-
- React.useEffect(() => {
-   dispatch(fetchMoviesList('drive'));
- }, [dispatch])
+  console.log(movies)
 
   return (
     <>
-      {movies.length ? (
+      {movies === null ? (
+        <Preview />
+      ) : movies.length ? (
         movies.map((movie) => <MoviePreview key={movie.imdbID} {...movie} />)
       ) : (
-        <div>Not Found</div>
+        <div className="not-found">
+          <span>Not Found</span>
+        </div>
       )}
     </>
   )
 }
-export default Movies;
-
-
-// <InfiniteScroll
-//       pageStart={0}
-//       loadMore={fetchMovies}
-//       hasMore={true}
-//       loader={<div style={{margin: '100px auto'}}><Loader /></div>}
-//   > {movies.map((movie) => <MoviePreview key={movie.imdbID} {...movie} />)}
-// </InfiniteScroll>
+export default Movies
