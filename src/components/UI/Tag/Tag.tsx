@@ -1,9 +1,8 @@
 import React from 'react'
-import styles from './styles.module.scss';
+import styles from './styles.module.scss'
 
-const Tag: React.FC = ({children}) => {
-  return (
-    <div className={styles.tag}>{children}</div>
-  )
+const Tag: React.FC = ({ children }) => {
+  if (children === 'N/A' || !children) return null
+  return <div className={styles.tag}>{children}</div>
 }
-export default Tag;
+export default Tag

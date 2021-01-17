@@ -7,6 +7,7 @@
   padding-top: 25px;
   .poster {
     border-radius: 10px;
+    max-width: 300px;
   }
 }
 .right {
@@ -66,15 +67,28 @@
   align-items: center;
 }
 
+.random {
+  margin-top: 20px;
+  max-width: 300px;
+}
 
-@media screen and (max-width: 500px) {
+
+@media screen and (max-width: 800px) {
   .movie {
     flex-direction: column;
   }
   .left {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding-top: 0;
+    .random {
+      width: 100%;
+      max-width: 100%;
+    }
+    .poster {
+      max-width: 100%;
+    }
   }
   .right {
     padding-bottom: 30px;

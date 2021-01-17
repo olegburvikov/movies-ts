@@ -1,6 +1,7 @@
 import React from 'react'
 import PreviewSvg from '../UI/icons/PreviewSvg'
 import styles from './Preview.module.scss'
+import RandomMovieButton from '../RandomMovieButton/RandomMovieButtont'
 
 function Preview() {
   return (
@@ -12,8 +13,13 @@ function Preview() {
           films, in order to read about a film, just enter its name in the
           search bar at the top.
         </div>
+        <div className={styles.randomButton}>
+          <RandomMovieButton> Random movie </RandomMovieButton>
+        </div>
       </div>
-      <PreviewSvg />
+      <div className={styles.previewImage}>
+        <PreviewSvg />
+      </div>
     </div>
   )
 }

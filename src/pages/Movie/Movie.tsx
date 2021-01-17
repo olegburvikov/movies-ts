@@ -5,6 +5,7 @@ import { getMovieById } from '../../api/get'
 import Tag from '../../components/UI/Tag/Tag'
 import imdbSvg from '../../assets/img/imdb.svg'
 import { Loader } from '../../components/UI/Loader/Loader'
+import RandomMovieButton from '../../components/RandomMovieButton/RandomMovieButtont'
 
 interface IParams {
   id: string
@@ -37,10 +38,20 @@ export const Movie = () => {
     })
   }, [params.id])
 
+  const notImage =
+    'https://www.brdtex.com/wp-content/uploads/2019/09/no-image-480x480.png'
+
   return !loading && movie ? (
     <div className={styles.movie}>
       <div className={styles.left}>
-        <img className={styles.poster} src={movie.poster} alt="movie poster" />
+        <img
+          className={styles.poster}
+          src={movie.poster !== 'N/A' && movie.poster ? movie.poster : notImage}
+          alt="movie poster"
+        />
+        <div className={styles.random}>
+          <RandomMovieButton> Another random movie </RandomMovieButton>
+        </div>
       </div>
       <div className={styles.right}>
         <div className={styles.title}>{movie.title}</div>

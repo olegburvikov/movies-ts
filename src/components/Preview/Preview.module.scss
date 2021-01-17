@@ -6,6 +6,7 @@
 }
 
 .greet {
+  margin-bottom: 100px;
   max-width: 620px;
   padding-right: 20px;
   color: #1b1d1c;
@@ -19,5 +20,42 @@
     font-size: 24px;
     font-weight: 500;
     line-height: 28px;
+    margin-bottom: 30px;
+  }
+}
+
+.randomButton {
+  max-width: 300px;
+}
+
+@media screen and ( max-width: 800px ) {
+  .preview {
+    flex-direction: column;
+  }
+
+  .previewImage {
+    order: 1;
+    height: 34vh;
+    width: 100%;
+  }
+
+  .greet {
+    order: 2;
+    margin-bottom: 20px;
+    padding-right: 0;
+    .title {
+      font-size: 56px;
+      line-height: 62px;
+    }
+    .text {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 28px;
+      margin-bottom: 30px;
+    }
+  }
+  .randomButton {
+    width: 100%;
+    max-width: 100%;
   }
 }
