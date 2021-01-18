@@ -4,9 +4,11 @@ import Input from '../UI/Input/Input'
 import { useDispatch } from 'react-redux'
 import { fetchMoviesList } from '../../redux/actions/movies.action'
 import styles from './Header.module.scss'
+import { useHistory } from 'react-router-dom'
 
 export default function Header() {
   const dispatch = useDispatch()
+  const history = useHistory()
 
   const [inputValue, setInputValue] = React.useState('')
 
@@ -14,7 +16,9 @@ export default function Header() {
     const inputValue = e.target.value.trim()
 
     setInputValue(inputValue)
-
+    if (inputValue.length > 2) {
+      history.push('/')
+    }
     dispatch(fetchMoviesList(inputValue))
   }
 

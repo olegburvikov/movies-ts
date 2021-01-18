@@ -5,7 +5,7 @@ import { getMovieById } from '../../api/get'
 import Tag from '../../components/UI/Tag/Tag'
 import imdbSvg from '../../assets/img/imdb.svg'
 import { Loader } from '../../components/UI/Loader/Loader'
-import RandomMovieButton from '../../components/RandomMovieButton/RandomMovieButtont'
+import RandomMovieButton from '../../components/RandomMovieButton/RandomMovieButton'
 
 interface IParams {
   id: string

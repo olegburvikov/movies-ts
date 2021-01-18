@@ -6,7 +6,9 @@
 ul {
   list-style-type: none;
 }
-
+body {
+  overflow-y: scroll;
+}
 html,
 body,
 #root, .app {

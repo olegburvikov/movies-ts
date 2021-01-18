@@ -1,7 +1,7 @@
 import React from 'react'
 import PreviewSvg from '../UI/icons/PreviewSvg'
 import styles from './Preview.module.scss'
-import RandomMovieButton from '../RandomMovieButton/RandomMovieButtont'
+import RandomMovieButton from '../RandomMovieButton/RandomMovieButton'
 
 function Preview() {
   return (
