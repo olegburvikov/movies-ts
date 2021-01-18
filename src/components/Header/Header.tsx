@@ -13,7 +13,7 @@ export default function Header() {
   const [inputValue, setInputValue] = React.useState('')
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    const inputValue = e.target.value.trim()
+    const inputValue = e.target.value
 
     setInputValue(inputValue)
     if (inputValue.length > 2) {
