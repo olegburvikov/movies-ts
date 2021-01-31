@@ -1,17 +1,18 @@
-  input {
-    background-color: #fff;
-    border: 1px solid transparent;
-    color: #000000;
-    width: 100%;
-    border-radius: 4px;
-    outline: none;
-    padding: 6px 14px;
-    font-size: 16px;
-    transition: all .3s;
-    &::placeholder {
-      color: #393939;
+.wrapper {
+    input {
+        background-color: #fff;
+        border: 1px solid transparent;
+        color: #000000;
+        width: 100%;
+        border-radius: 4px;
+        outline: none;
+        padding: 11px 14px;
+        font-size: 16px;
+        transition: all .3s;
+        &::placeholder {
+            color: #393939;
+        }
+
     }
-    &:focus {
-      border: 1px solid #000000;
-    }
-  }
+
+}

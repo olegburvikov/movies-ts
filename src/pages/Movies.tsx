@@ -12,8 +12,6 @@ const Movies: React.FC = () => {
     (state: RootState) => state.movies.list
   )
 
-  console.log(movies)
-
   return (
     <>
       {movies === null ? (
