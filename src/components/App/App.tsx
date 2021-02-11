@@ -4,18 +4,18 @@ import Header from '../Header/Header'
 import { Route, Switch } from 'react-router-dom'
 import Movies from '../../pages/Movies'
 import { Movie } from '../../pages/Movie/Movie'
-import firebase from 'firebase'
-import { firebaseConfig } from '../../api/firebaseService'
 import Favorites from '../../pages/Favorites/Favorites'
 import PrivateRoute from '../PrivateRoute'
-
-firebase.initializeApp(firebaseConfig)
+import { testRequest } from '../../api/get'
 
 const App: React.FC = () => {
-  // React.useEffect(() => {
-  //   const db = firebase.database()
-  //   console.log(db)
-  // })
+  React.useEffect(() => {
+    testRequest('https://filmapi0.herokuapp.com/api/auth/login').then(
+      (data) => {
+        console.log(data)
+      }
+    )
+  }, [])
 
   return (
     <div className="app">

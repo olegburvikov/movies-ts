@@ -5,10 +5,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchMoviesList } from '../../redux/actions/movies.action'
 import styles from './Header.module.scss'
 import { useHistory, Link } from 'react-router-dom'
-import firebase from 'firebase'
-import { googleAuthProvider } from '../../api/firebaseService'
 import GoogleAuthButton from '../UI/GoogleAuthButton/GoogleAuthButton'
-import { userLogin, userLogout } from '../../redux/actions/user.action'
+import { userLogout } from '../../redux/actions/user.action'
 import { RootState } from '../../redux/reducers/root.reducer'
 import Avatar from '../UI/Avatar/Avatar'
 import { Menu, MenuItem } from '../UI/Menu/Menu'
@@ -29,25 +27,8 @@ export default function Header() {
     dispatch(fetchMoviesList(inputValue))
   }
 
-  const authHelper = (obj: any) => ({
-    token: obj.credential.accessToken,
-    name: obj.user.displayName,
-    id: obj.user.uid,
-    photo: obj.user.photoURL,
-    email: obj.user.email,
-  })
-
   const handleLogout = (): void => {
     dispatch(userLogout())
-  }
-
-  const handleGoogleAuth = (): void => {
-    firebase
-      .auth()
-      .signInWithPopup(googleAuthProvider)
-      .then((result) => {
-        dispatch(userLogin(authHelper(result)))
-      })
   }
 
   return (
@@ -70,7 +51,7 @@ export default function Header() {
           </Menu>
         </>
       ) : (
-        <GoogleAuthButton onClick={handleGoogleAuth} />
+        <GoogleAuthButton />
       )}
     </div>
   )
