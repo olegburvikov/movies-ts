@@ -43,7 +43,7 @@ export default function Header() {
       </div>
       {user.is_auth ? (
         <>
-          <Menu menuButton={<Avatar src={user.photo} />}>
+          <Menu menuButton={<Avatar src={user.avatar} />}>
             <Link to="/favorites">
               <MenuItem>Favorites</MenuItem>
             </Link>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { IMoviePreview } from '../api/get'
+import { IMoviePreview } from '../api/types'
 import MoviePreview from '../components/MoviePreview/MoviePreview'
 import { useSelector } from 'react-redux'
 import { RootState } from '../redux/reducers/root.reducer'

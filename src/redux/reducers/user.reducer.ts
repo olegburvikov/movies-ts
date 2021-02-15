@@ -4,7 +4,7 @@ const initialState = {
   is_auth: false,
   name: null,
   email: null,
-  photo: null,
+  avatar: null,
   token: null,
   id: null,
 }
