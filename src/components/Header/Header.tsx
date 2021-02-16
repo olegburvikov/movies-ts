@@ -44,8 +44,8 @@ export default function Header() {
       {user.is_auth ? (
         <>
           <Menu menuButton={<Avatar src={user.avatar} />}>
-            <Link to="/favorites">
-              <MenuItem>Favorites</MenuItem>
+            <Link to="/favourites">
+              <MenuItem>Favourites</MenuItem>
             </Link>
             <MenuItem onClick={handleLogout}>Log Out</MenuItem>
           </Menu>

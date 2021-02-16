@@ -1,4 +1,4 @@
-import { postRequest } from '../api/post'
+import { googleAuth } from '../api/post'
 import { getQuery } from '../helpers/api.hepler'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
@@ -9,18 +9,21 @@ export default function AuthVerify() {
   const history = useHistory()
 
   const dispatch = useDispatch()
+  const code = getQuery('code')
 
   React.useEffect(() => {
-    postRequest({
-      code: getQuery('code'),
-      redirect_uri: 'http://localhost:3000/auth-verify',
-    }).then((data) => {
-      if (data.ok) {
-        dispatch(userLogin(data))
-      }
-      history.push('/')
-    })
-  }, [history, dispatch])
+    if (code) {
+      googleAuth({
+        code,
+        redirect_uri: process.env.REACT_APP_REDIRECT_URI || '',
+      }).then((data) => {
+        if (data.ok) {
+          dispatch(userLogin(data))
+        }
+        history.push('/')
+      })
+    }
+  }, [code, history, dispatch])
 
   return null
 }

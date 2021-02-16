@@ -10,6 +10,8 @@ import { timePrettier } from '../../helpers/time.helper'
 import { HeartIcon } from '../../components/UI/icons/Icons'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../redux/reducers/root.reducer'
+import { postFavoriteMovie } from '../../api/post'
+import { deleteFavourite } from '../../api/delete'
 
 interface IParams {
   id: string
@@ -21,9 +23,11 @@ export interface IMovie {
   released: string
   runtime: string
   imdbRating: string
+  imdbID: string
   plot: string
   poster: string
   country: string
+  year: string
 }
 
 type MovieType = IMovie | null
@@ -41,7 +45,21 @@ export const Movie = () => {
   const [isFavorite, setIsFavorite] = React.useState(false)
 
   const handleFavoriteClick = () => {
-    setIsFavorite(!isFavorite)
+    if (movie) {
+      if (isFavorite) {
+        postFavoriteMovie(movie).then((data) => {
+          if (data.ok) {
+            setIsFavorite(true)
+          }
+        })
+      } else {
+        deleteFavourite(movie.imdbID).then((data) => {
+          if (data.ok) {
+            setIsFavorite(false)
+          }
+        })
+      }
+    }
   }
 
   React.useEffect(() => {
