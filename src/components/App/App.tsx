@@ -13,9 +13,9 @@ import { getMe } from '../../api/get'
 
 const App: React.FC = () => {
   const dispatch = useDispatch()
-
+  console.log(process.env.REACT_APP_REDIRECT_URI)
   React.useEffect(() => {
-    const token = JSON.parse(localStorage.getItem('token') || '{}')
+    const token = JSON.parse(localStorage.getItem('token') || 'null')
     if (token) {
       getMe().then((data) => {
         dispatch(

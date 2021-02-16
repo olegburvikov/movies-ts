@@ -1,7 +1,7 @@
 import { API_CONST } from './consts'
 
 export const deleteRequest = async (url: string) => {
-  const token = JSON.parse(localStorage.getItem('token') || '{}')
+  const token = JSON.parse(localStorage.getItem('token') || 'null')
 
   const response = await fetch(`${API_CONST.API_BASE}${url}`, {
     headers: {

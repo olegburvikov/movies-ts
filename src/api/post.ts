@@ -1,7 +1,7 @@
 import { IMovie } from '../pages/Movie/Movie'
 
 export const postRequest = async (url: string, data: object) => {
-  const token = JSON.parse(localStorage.getItem('token') || '{}')
+  const token = JSON.parse(localStorage.getItem('token') || 'null')
   const response = await fetch(`https://filmapi0.herokuapp.com/api/${url}`, {
     method: 'POST',
     headers: {
