@@ -18,3 +18,14 @@
   }
 }
 
+@media screen and (max-width: 800px) {
+  .button {
+    span {
+      display: none;
+    }
+    img {
+      margin-right: 0;
+    }
+  }
+}
+

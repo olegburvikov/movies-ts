@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Icon() {
-  const accentColor = '#17C37B'
+  const accentColor = 'var(--color-accent)'
   const regularColor = '#000000'
   const womanSkinColor = '#ffc2ca'
 

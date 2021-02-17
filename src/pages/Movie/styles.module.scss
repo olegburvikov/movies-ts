@@ -12,6 +12,7 @@
 }
 .right {
   max-width: 635px;
+  margin-left: 22px;
   width: 100%;
 }
 
@@ -21,7 +22,7 @@
   font-weight: bold;
   font-size: 67.77px;
   line-height: 90px;
-  color: #1b1d1c;
+  color: var(--primary-text);
 }
 
 .overview {
@@ -31,13 +32,13 @@
     padding-top: 6px;
     font-size: 16px;
     line-height: 24px;
-    color: #1b1d1c;
+    color: var(--primary-text);
   }
 }
 
 .tags {
-  padding-top: 12px;
   display: flex;
+  flex-wrap: wrap;
   & > div:not(last-child) {
     margin-right: 14px;
   }
@@ -52,7 +53,7 @@
   }
   font-size: 16px;
   line-height: 24px;
-  color: #1b1d1c;
+  color: var(--primary-text);
   font-weight: 500;
   .accent {
     font-size: 24px;
@@ -109,10 +110,13 @@
   }
   .right {
     padding-bottom: 30px;
+    margin-left: 0;
+
   }
 
   .tags {
     overflow: auto;
+    flex-wrap: nowrap;
     padding-bottom: 15px;
     & > div {
       white-space: nowrap;

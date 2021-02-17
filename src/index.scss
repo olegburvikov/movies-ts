@@ -34,7 +34,7 @@ a {
 
 :root {
   --color-bg: #f9f7e8;
-  --color-accent: #61bfad;
+  --color-accent: #17C37B;
   --primary-text: #1b1d1c;
   --primart-font: 'Inter', sans-serif;
   --second-font: 'Roboto', sans-serif;
@@ -76,7 +76,7 @@ a {
   font-weight: bold;
   font-size: 67.77px;
   line-height: 90px;
-  color: #1b1d1c;
+  color: var(--primary-text);
 }
 
 .not-found {

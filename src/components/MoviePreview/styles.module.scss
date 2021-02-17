@@ -17,7 +17,7 @@
       font-weight: bold;
       font-size: 36px;
       line-height: 44px;
-      color: #1b1d1c;
+      color: var(--primary-text);
       padding-bottom: 7px;
     }
   }
@@ -28,7 +28,7 @@
     padding: 8px;
     font-size: 14px;
     line-height: 17px;
-    color: #1b1d1c;
+    color: var(--primary-text);
   }
 
   // effects
