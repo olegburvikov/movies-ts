@@ -11,6 +11,12 @@ import { useDispatch } from 'react-redux'
 import { userLogin } from '../../redux/actions/user.action'
 import { getMe } from '../../api/get'
 
+  /* TODO list
+    - Добавить возможность удалить фильм из favourites
+    - Добавить тёмную тему
+    - Сделать редизайн поиска
+  */
+
 const App: React.FC = () => {
   const dispatch = useDispatch()
   React.useEffect(() => {

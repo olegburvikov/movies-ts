@@ -9,7 +9,11 @@ export const deleteRequest = async (url: string) => {
     },
     method: 'DELETE',
   })
-  return response.json()
+
+  const json = await response.json()
+  json.ok = response.ok
+
+  return json
 }
 
 export const deleteFavourite = async (imdbID: string) => {

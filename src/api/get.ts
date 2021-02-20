@@ -51,6 +51,10 @@ export const getMovieById = async (id: string) => {
   }
 }
 
+export const checkIsFavourite = async (imdbId: string) => {
+  return await getRequest(`/favourites/is-movie-favourite/?imdbID=${imdbId}`)
+}
+
 export const getFavourites = async () => {
   return await getRequest(`/favourites`)
 }

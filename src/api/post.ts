@@ -1,4 +1,4 @@
-import { IMovie } from '../pages/Movie/Movie'
+import { IMovie } from '../types'
 
 export const postRequest = async (url: string, data: object) => {
   const token = JSON.parse(localStorage.getItem('token') || 'null')

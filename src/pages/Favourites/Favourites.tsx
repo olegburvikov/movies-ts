@@ -1,7 +1,7 @@
 import React from 'react'
 import { getFavourites } from '../../api/get'
-import MoviePreview from '../../components/MoviePreview/MoviePreview'
-import { IMovie } from '../Movie/Movie'
+import FavouritesList from '../../components/FavouritesList/FavouritesList'
+import { IMovie } from '../../types'
 
 function Favourites() {
   const [favourites, setFavourites] = React.useState([])
@@ -15,7 +15,16 @@ function Favourites() {
     <div>
       {favourites.length
         ? favourites.map((movie: IMovie) => (
-            <MoviePreview key={movie.imdbID} {...movie} />
+            <FavouritesList
+              key={movie.imdbID}
+              title={movie.title}
+              genre={movie.genre}
+              released={movie.released}
+              imdbRating={movie.imdbRating}
+              imdbID={movie.imdbID}
+              poster={movie.poster}
+              country={movie.country}
+            />
           ))
         : 'empty'}
     </div>

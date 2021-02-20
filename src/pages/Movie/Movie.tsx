@@ -1,33 +1,23 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import styles from './styles.module.scss'
-import { getMovieById } from '../../api/get'
-import Tag from '../../components/UI/Tag/Tag'
-import imdbSvg from '../../assets/img/imdb.svg'
-import { Loader } from '../../components/UI/Loader/Loader'
-import RandomMovieButton from '../../components/RandomMovieButton/RandomMovieButton'
-import { timePrettier } from '../../helpers/time.helper'
-import { HeartIcon } from '../../components/UI/icons/Icons'
 import { useSelector } from 'react-redux'
+import Tag from '../../components/UI/Tag/Tag'
+import RandomMovieButton from '../../components/RandomMovieButton/RandomMovieButton'
+import { Loader } from '../../components/UI/Loader/Loader'
+import { HeartIcon } from '../../components/UI/icons/Icons'
+
+import { timePrettier } from '../../helpers/time.helper'
 import { RootState } from '../../redux/reducers/root.reducer'
+import { checkIsFavourite, getMovieById } from '../../api/get'
 import { postFavoriteMovie } from '../../api/post'
 import { deleteFavourite } from '../../api/delete'
+import styles from './styles.module.scss'
+import { IMovie } from '../../types'
+
+import imdbSvg from '../../assets/img/imdb.svg'
 
 interface IParams {
   id: string
-}
-
-export interface IMovie {
-  title: string
-  genre: string
-  released: string
-  runtime: string
-  imdbRating: string
-  imdbID: string
-  plot: string
-  poster: string
-  country: string
-  year: string
 }
 
 type MovieType = IMovie | null
@@ -47,15 +37,15 @@ export const Movie = () => {
   const handleFavoriteClick = () => {
     if (movie) {
       if (isFavorite) {
-        postFavoriteMovie(movie).then((data) => {
-          if (data.ok) {
-            setIsFavorite(true)
-          }
-        })
-      } else {
         deleteFavourite(movie.imdbID).then((data) => {
           if (data.ok) {
             setIsFavorite(false)
+          }
+        })
+      } else {
+        postFavoriteMovie(movie).then((data) => {
+          if (data.ok) {
+            setIsFavorite(true)
           }
         })
       }
@@ -64,9 +54,13 @@ export const Movie = () => {
 
   React.useEffect(() => {
     setLoading(true)
+
     getMovieById(params.id).then((data) => {
       setMovie(data)
       setLoading(false)
+    })
+    checkIsFavourite(params.id).then(({ status }) => {
+      setIsFavorite(status)
     })
   }, [params.id])
 
