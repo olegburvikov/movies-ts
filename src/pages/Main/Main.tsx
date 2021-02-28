@@ -1,9 +1,9 @@
 import React from 'react'
-import PreviewSvg from '../UI/icons/PreviewSvg'
-import styles from './Preview.module.scss'
-import RandomMovieButton from '../RandomMovieButton/RandomMovieButton'
+import PreviewSvg from '../../components/UI/icons/PreviewSvg'
+import styles from './Main.module.scss'
+import RandomMovieButton from '../../components/RandomMovieButton/RandomMovieButton'
 
-function Preview() {
+function Main() {
   return (
     <div className={styles.preview}>
       <div className={styles.greet}>
@@ -24,4 +24,4 @@ function Preview() {
   )
 }
 
-export default Preview
+export default Main

@@ -4,17 +4,17 @@ import { useSelector } from 'react-redux'
 import Tag from '../../components/UI/Tag/Tag'
 import RandomMovieButton from '../../components/RandomMovieButton/RandomMovieButton'
 import { Loader } from '../../components/UI/Loader/Loader'
-import { HeartIcon } from '../../components/UI/icons/Icons'
 
 import { timePrettier } from '../../helpers/time.helper'
 import { RootState } from '../../redux/reducers/root.reducer'
 import { checkIsFavourite, getMovieById } from '../../api/get'
 import { postFavoriteMovie } from '../../api/post'
-import { deleteFavourite } from '../../api/delete'
+import { deleteFavouriteRequest } from '../../api/delete'
 import styles from './styles.module.scss'
 import { IMovie } from '../../types'
-
-import imdbSvg from '../../assets/img/imdb.svg'
+import ImdbRating from '../../components/UI/ImdbRating/ImdbRating'
+import HeartButton from '../../components/UI/HeartButton/HeartButton'
+import { toast } from 'react-toastify'
 
 interface IParams {
   id: string
@@ -37,14 +37,16 @@ export const Movie = () => {
   const handleFavoriteClick = () => {
     if (movie) {
       if (isFavorite) {
-        deleteFavourite(movie.imdbID).then((data) => {
+        deleteFavouriteRequest(movie.imdbID).then((data) => {
           if (data.ok) {
+            toast(`👍 ${movie.title} removed from favourite!`)
             setIsFavorite(false)
           }
         })
       } else {
         postFavoriteMovie(movie).then((data) => {
           if (data.ok) {
+            toast(`👍 ${movie.title} added to favourite!`)
             setIsFavorite(true)
           }
         })
@@ -59,10 +61,12 @@ export const Movie = () => {
       setMovie(data)
       setLoading(false)
     })
-    checkIsFavourite(params.id).then(({ status }) => {
-      setIsFavorite(status)
-    })
-  }, [params.id])
+    if (isAuth) {
+      checkIsFavourite(params.id).then(({ status }) => {
+        setIsFavorite(status)
+      })
+    }
+  }, [isAuth, params.id])
 
   return !loading && movie ? (
     <div className={styles.movie}>
@@ -85,16 +89,11 @@ export const Movie = () => {
           <Tag>{movie.country}</Tag>
         </div>
 
-        <div className={styles.rating}>
-          <img src={imdbSvg} alt="imdb logo" />
-          <div className={styles.ratingValue}>
-            <span className={styles.accent}> {movie.imdbRating}</span>
-            <span>/10</span>
-          </div>
+        <div className={styles.rating_wrapper}>
+          <ImdbRating value={movie.imdbRating} />
+
           {isAuth && (
-            <button className={styles.heart} onClick={handleFavoriteClick}>
-              <HeartIcon fill={isFavorite ? 'red' : 'none'} />
-            </button>
+            <HeartButton isActive={isFavorite} onClick={handleFavoriteClick} />
           )}
         </div>
 

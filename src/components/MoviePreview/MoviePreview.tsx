@@ -1,17 +1,22 @@
 import React from 'react'
 import { IMoviePreview } from '../../api/types'
 import styles from './styles.module.scss'
-import { useHistory } from 'react-router-dom'
 
 const imgNoFind =
   'https://www.brdtex.com/wp-content/uploads/2019/09/no-image-480x480.png'
 
-const MoviePreview = ({ poster, title, year, imdbID }: IMoviePreview) => {
-  const history = useHistory()
-
-  const handleClick = () => {
-    history.push(`/movie/${imdbID}`)
-  }
+interface IMoviePreviewProps extends IMoviePreview {
+  onClick: (id: string) => void
+}
+// TODO add memo
+const MoviePreview: React.FC<IMoviePreviewProps> = ({
+  poster,
+  title,
+  year,
+  imdbID,
+  onClick,
+}) => {
+  const handleClick = () => onClick(imdbID)
 
   return (
     <div className={styles.movie} onClick={handleClick}>

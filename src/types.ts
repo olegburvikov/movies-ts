@@ -9,4 +9,5 @@ export interface IMovie {
   poster: string
   country: string
   year: string
+  _id?: string
 }

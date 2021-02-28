@@ -16,6 +16,6 @@ export const deleteRequest = async (url: string) => {
   return json
 }
 
-export const deleteFavourite = async (imdbID: string) => {
+export const deleteFavouriteRequest = async (imdbID: string) => {
   return await deleteRequest(`/favourites/?imdbID=${imdbID}`)
 }

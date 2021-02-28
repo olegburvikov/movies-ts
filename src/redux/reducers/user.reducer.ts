@@ -1,7 +1,7 @@
 import CONST from '../const'
 
 const initialState = {
-  is_auth: false,
+  is_auth: null,
   name: null,
   email: null,
   avatar: null,
@@ -20,6 +20,7 @@ export default function userReducer(state = initialState, action: any) {
     case CONST.USER_LOGOUT:
       return {
         ...initialState,
+        is_auth: false,
       }
     default:
       return state

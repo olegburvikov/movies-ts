@@ -17,7 +17,11 @@ export const getRequest = async (url: string) => {
     },
     method: 'GET',
   })
-  return response.json()
+
+  const json = await response.json()
+  json.ok = response.ok
+
+  return json
 }
 
 export const getMovies = async (text: string) => {

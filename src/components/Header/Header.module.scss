@@ -1,5 +1,25 @@
-.inputWrapper {
-  width: 600px;
-  margin-left: 20px;
-  margin-right: 20px;
+
+.right_side {
+  display: flex;
+  align-items: center;
+
+}
+
+.search {
+  cursor: pointer;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:none;
+  outline: none;
+
+  svg {
+    path {
+      transition: .3s;
+    }
+    &:hover path {
+      fill: var(--primary-text);
+    }
+  }
 }

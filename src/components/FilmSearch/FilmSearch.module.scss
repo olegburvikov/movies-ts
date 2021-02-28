@@ -1,0 +1,54 @@
+.portal {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #3333339f;
+}
+
+.modal {
+  border-radius: 4px;
+  position: absolute;
+  top: 30px;
+  max-width: 500px;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%);
+  min-height: 300px;
+
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.movies {
+  overflow: auto;
+  max-height: 430px;
+}
+
+.input {
+  padding: 0 15px;
+}
+
+.zero_ui {
+    margin: auto;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    color: #333333;
+    opacity: 0.95;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+@media screen and (max-width: 500px) {
+  .modal {
+    max-width: 90%;
+    top: 10px;
+  }
+}
+

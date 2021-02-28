@@ -1,0 +1,15 @@
+.heart {
+  border: none;
+  background: none;
+  margin-left: auto;
+  cursor: pointer;
+  outline: none;
+  svg {
+    transition: all .3s;
+  }
+  &:hover {
+    svg {
+      transform: scale(1.4);
+    }
+  }
+}
