@@ -2,7 +2,7 @@ import React from 'react'
 import { IMovie } from '../../types'
 import styles from './FavouritesItem.module.scss'
 import Tag from '../UI/Tag/Tag'
-import { timePrettier } from '../../helpers/time.helper'
+import { isoDatePrettier, timePrettier } from '../../helpers/time.helper'
 import { Link } from 'react-router-dom'
 
 interface IFavouritesItemProps {
@@ -27,7 +27,7 @@ const FavouritesItem: React.FC<IFavouritesItemProps> = ({ data }) => {
 
         <div className={styles.tags}>
           <Tag>{data.genre}</Tag>
-          <Tag>{data.released}</Tag>
+          <Tag>{isoDatePrettier(data.released)}</Tag>
           <Tag>{timePrettier(data.runtime)}</Tag>
           <Tag>{data.country}</Tag>
         </div>

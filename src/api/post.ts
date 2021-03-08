@@ -1,4 +1,6 @@
 import { IMovie } from '../types'
+import { formatISO } from '../helpers/time.helper'
+import { IGoogleAuth } from './types'
 
 export const postRequest = async (url: string, data: object) => {
   const token = JSON.parse(localStorage.getItem('token') || 'null')
@@ -18,15 +20,13 @@ export const postRequest = async (url: string, data: object) => {
   return await json
 }
 
-interface IGoogleAuth {
-  code: string
-  redirect_uri: string
-}
-
 export const googleAuth = async (data: IGoogleAuth) => {
   return await postRequest('auth/login', data)
 }
 
 export const postFavoriteMovie = async (data: IMovie) => {
-  return await postRequest('favourites', data)
+  return await postRequest('favourites', {
+    ...data,
+    released: formatISO(data.released),
+  })
 }

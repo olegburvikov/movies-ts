@@ -18,7 +18,7 @@ const FavouritesList: React.FC = () => {
 
   return (
     <>
-      <h2 className={styles.mainTitle}>Your favourite movies</h2>
+      <h2 className={styles.page_title}>Favourites</h2>
       <div className={styles.favorites_list}>
         {data.map((movie: IMovie) => (
           <FavoritesItem key={movie._id} data={movie} />

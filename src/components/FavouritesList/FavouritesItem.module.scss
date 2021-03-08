@@ -4,8 +4,9 @@
 }
 
 
-.mainTitle {
-  padding-bottom: 20px;
+.page_title {
+  font-size: 32px;
+  padding: 10px 0 20px 0;
 }
 
 .movie {
@@ -49,7 +50,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .mainTitle {
+  .page_title {
     text-align: center;
   }
   .movie {
