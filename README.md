@@ -1,1 +1,1 @@
-Demo - https://olegburvikov-movies.surge.sh/
+Demo - https://fmovies-ob.netlify.app/
