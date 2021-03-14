@@ -1,9 +1,9 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import Tag from '../../components/UI/Tag/Tag'
-import RandomMovieButton from '../../components/RandomMovieButton/RandomMovieButton'
-import { Loader } from '../../components/UI/Loader/Loader'
+import Tag from '../../ui/Tag/Tag'
+import RandomMovieButton from '../RandomMovieButton/RandomMovieButton'
+import { Loader } from '../../ui/Loader/Loader'
 
 import { timePrettier } from '../../helpers/time.helper'
 import { RootState } from '../../redux/reducers/root.reducer'
@@ -11,10 +11,11 @@ import { checkIsFavourite, getMovieById } from '../../api/get'
 import { postFavoriteMovie } from '../../api/post'
 import { deleteFavouriteRequest } from '../../api/delete'
 import styles from './styles.module.scss'
-import { IMovie } from '../../types'
-import ImdbRating from '../../components/UI/ImdbRating/ImdbRating'
-import HeartButton from '../../components/UI/HeartButton/HeartButton'
+import { IMovie } from '../../types/movie'
+import ImdbRating from '../../ui/ImdbRating/ImdbRating'
+import HeartButton from '../../ui/HeartButton/HeartButton'
 import { toast } from 'react-toastify'
+import Heading from '../../ui/Heading/Heading'
 
 interface IParams {
   id: string
@@ -81,7 +82,9 @@ export const Movie = () => {
         </div>
       </div>
       <div className={styles.right}>
-        <div className={styles.title}>{movie.title}</div>
+        <Heading variant="h2" fontFamily="accent">
+          {movie.title}
+        </Heading>
         <div className={styles.tags}>
           <Tag>{movie.released}</Tag>
           <Tag>{movie.genre}</Tag>
@@ -98,9 +101,7 @@ export const Movie = () => {
         </div>
 
         <div className={styles.overview}>
-          <div>
-            <b>Overview</b>
-          </div>
+          <Heading variant="h5">Overview</Heading>
           <div className={styles.plot}>{movie.plot}</div>
         </div>
       </div>

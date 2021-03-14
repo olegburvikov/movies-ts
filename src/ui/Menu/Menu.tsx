@@ -1,13 +1,9 @@
 import React, { ComponentElement } from 'react'
 import styles from './Menu.module.scss'
-import useClickOutside from '../../../hooks/useClickOutside'
+import useClickOutside from '../../hooks/useClickOutside'
 
 interface IMenu {
   menuButton: ComponentElement<any, any>
-}
-
-interface IMenuItemProps {
-  onClick?: () => void
 }
 
 export const Menu: React.FC<IMenu> = ({ children, menuButton }) => {
@@ -27,14 +23,6 @@ export const Menu: React.FC<IMenu> = ({ children, menuButton }) => {
           {children}
         </div>
       )}
-    </div>
-  )
-}
-
-export const MenuItem: React.FC<IMenuItemProps> = ({ children, onClick }) => {
-  return (
-    <div onClick={onClick} className={styles.item}>
-      {children}
     </div>
   )
 }

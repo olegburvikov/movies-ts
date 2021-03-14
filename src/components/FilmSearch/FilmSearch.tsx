@@ -1,16 +1,16 @@
 import React from 'react'
 import Portal from '../Portal'
 import styles from './FilmSearch.module.scss'
-import Input from '../UI/Input/Input'
+import Input from '../../ui/Input/Input'
 import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { IMoviePreview } from '../../api/types'
+import { IMoviePreview } from '../../types/movie'
 import MoviePreview from '../MoviePreview/MoviePreview'
 import { setIsSearchOpen } from '../../redux/actions/ui.action'
 import { getMovies } from '../../api/get'
 import useDebounce from '../../hooks/useDebounce'
 import useClickOutside from '../../hooks/useClickOutside'
-import { Loader } from '../UI/Loader/Loader'
+import { Loader } from '../../ui/Loader/Loader'
 
 type MoviesList = null | Array<IMoviePreview>
 

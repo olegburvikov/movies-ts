@@ -1,5 +1,5 @@
 import { FAVOURITE } from '../const'
-import { IMovie } from '../../types'
+import { IMovie } from '../../types/movie'
 
 const initialState = {
   list: [],

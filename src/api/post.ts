@@ -1,6 +1,6 @@
-import { IMovie } from '../types'
+import { IMovie } from '../types/movie'
 import { formatISO } from '../helpers/time.helper'
-import { IGoogleAuth } from './types'
+import { IGoogleAuth } from '../types/api'
 
 export const postRequest = async (url: string, data: object) => {
   const token = JSON.parse(localStorage.getItem('token') || 'null')

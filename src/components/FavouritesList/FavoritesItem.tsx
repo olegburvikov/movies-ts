@@ -1,7 +1,7 @@
 import React from 'react'
-import { IMovie } from '../../types'
-import styles from './FavouritesItem.module.scss'
-import Tag from '../UI/Tag/Tag'
+import { IMovie } from '../../types/movie'
+import styles from './FavouritesList.module.scss'
+import Tag from '../../ui/Tag/Tag'
 import { isoDatePrettier, timePrettier } from '../../helpers/time.helper'
 import { Link } from 'react-router-dom'
 

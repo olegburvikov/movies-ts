@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import { IMovie } from '../../types'
+import { IMovie } from '../../types/movie'
 import FavoritesItem from './FavoritesItem'
-import styles from './FavouritesItem.module.scss'
+import styles from './FavouritesList.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../redux/reducers/root.reducer'
 import { updateFavouriteAction } from '../../redux/actions/favourite.action'
@@ -17,14 +17,11 @@ const FavouritesList: React.FC = () => {
   }, [dispatch])
 
   return (
-    <>
-      <h2 className={styles.page_title}>Favourites</h2>
-      <div className={styles.favorites_list}>
-        {data.map((movie: IMovie) => (
-          <FavoritesItem key={movie._id} data={movie} />
-        ))}
-      </div>
-    </>
+    <div className={styles.favorites_list}>
+      {data.map((movie: IMovie) => (
+        <FavoritesItem key={movie._id} data={movie} />
+      ))}
+    </div>
   )
 }
 

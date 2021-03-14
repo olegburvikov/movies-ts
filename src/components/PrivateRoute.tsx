@@ -3,13 +3,17 @@ import { Route, Redirect } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { RootState } from '../redux/reducers/root.reducer'
 
-interface IPrivateRoute {
+interface IPrivateRouteProps {
   component: React.FC
   path: string
   exact: boolean
 }
 
-const PrivateRoute: React.FC<IPrivateRoute> = ({ component, path, exact }) => {
+const PrivateRoute: React.FC<IPrivateRouteProps> = ({
+  component,
+  path,
+  exact,
+}) => {
   const isAuth = useSelector((state: RootState) => state.user.is_auth)
 
   return isAuth ? (

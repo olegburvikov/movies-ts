@@ -3,15 +3,10 @@
   flex-wrap: wrap;
 }
 
-
-.page_title {
-  font-size: 32px;
-  padding: 10px 0 20px 0;
-}
-
 .movie {
   display: flex;
   flex: 50%;
+  max-width: 50%;
   margin-bottom: 30px;
   transition: all .3s;
   &:hover {

@@ -1,5 +1,5 @@
 export const getQuery = (query: string): string | null => {
-  // @ts-ignore
-  const searchUrl = new URL(window.location).searchParams
+  const href = window.location.href
+  const searchUrl = new URL(href).searchParams
   return searchUrl.get(query)
 }

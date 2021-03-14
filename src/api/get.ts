@@ -1,5 +1,5 @@
-import { IDataMoviePreview, IMoviePreview } from './types'
-import { API_CONST } from './consts'
+import { IDataMoviePreview, IMoviePreview } from '../types/movie'
+import { API_CONST } from '../constans/api.constans'
 
 export const getMovieRequest = async (url: string) => {
   const response = await fetch(

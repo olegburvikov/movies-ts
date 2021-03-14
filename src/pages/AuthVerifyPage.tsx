@@ -4,12 +4,11 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { userLogin } from '../redux/actions/user.action'
-import { Loader } from '../components/UI/Loader/Loader'
+import { Loader } from '../ui/Loader/Loader'
 import { toast } from 'react-toastify'
 
-export default function AuthVerify() {
+export default function AuthVerifyPage() {
   const history = useHistory()
-
   const dispatch = useDispatch()
   const code = getQuery('code')
 

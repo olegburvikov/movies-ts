@@ -1,0 +1,53 @@
+@import "variables";
+@import "reset";
+
+body {
+  padding-bottom: 10px;
+}
+html,
+body,
+#root {
+  height: 100%;
+  background: var(--color-bg);
+  color: var(--primary-text);
+  font-family: var(--primary-font);
+  font-weight: 400;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  --horizontal-spacing: 15px;
+
+  padding: 0 var(--horizontal-spacing);
+  max-width: calc(1110px - var(--horizontal-spacing) * 2);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.full-page-centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.title {
+  font-family: var(--accent-font);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 67.77px;
+  line-height: 90px;
+  color: var(--primary-text);
+}
+
+@media screen and (max-width: 700px) {
+  html,
+  body,
+  #root {
+    height: unset;
+  }
+}

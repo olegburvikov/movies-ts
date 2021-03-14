@@ -1,4 +1,4 @@
-import { API_CONST } from './consts'
+import { API_CONST } from '../constans/api.constans'
 
 export const deleteRequest = async (url: string) => {
   const token = JSON.parse(localStorage.getItem('token') || 'null')

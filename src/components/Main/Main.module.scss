@@ -10,12 +10,7 @@
   max-width: 620px;
   padding-right: 20px;
   color: var(--primary-text);
-  .title {
-    font-weight: bold;
-    font-size: 67.77px;
-    line-height: 90px;
-    padding-bottom: 20px;
-  }
+
   .text {
     font-size: 20px;
     font-weight: 500;
@@ -24,7 +19,7 @@
   }
 }
 
-.randomButton {
+.button_wrapper {
   max-width: 300px;
 }
 

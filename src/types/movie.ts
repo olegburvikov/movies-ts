@@ -1,3 +1,17 @@
+export interface IMovie {
+  title: string
+  genre: string
+  released: string
+  runtime: string
+  imdbRating: string
+  imdbID: string
+  plot: string
+  poster: string
+  country: string
+  year: string
+  _id?: string
+}
+
 export interface IDataMoviePreview {
   Poster: string
   Title: string
@@ -11,9 +25,4 @@ export interface IMoviePreview {
   title: string
   year: string
   imdbID: string
-}
-
-export interface IGoogleAuth {
-  code: string
-  redirect_uri: string
 }

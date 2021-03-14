@@ -1,8 +1,18 @@
 
+.header {
+  padding-top: 24px;
+  margin-bottom: 24px;
+
+}
+.header_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .right_side {
   display: flex;
   align-items: center;
-
 }
 
 .search {

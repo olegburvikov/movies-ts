@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Avatar.module.scss'
-import anonymousSvg from '../../../assets/icons/anonimus.svg'
+import anonymousSvg from '../../assets/icons/anonimus.svg'
 
 interface IAvatarProps {
   src: string

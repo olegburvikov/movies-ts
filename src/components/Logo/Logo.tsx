@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logoSvg from '../../assets/img/logo.svg'
+import logoSvg from '../../assets/icons/logo.svg'
 
 export default function Logo() {
   return (

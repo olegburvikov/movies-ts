@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './ImdbRating.module.scss'
-import imdbSvg from '../../../assets/img/imdb.svg'
+import imdbSvg from '../../assets/icons/imdb.svg'
 
 interface IImdbRatingProps {
   value: string

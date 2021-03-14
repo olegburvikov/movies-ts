@@ -1,14 +1,11 @@
 import React from 'react'
-import { IMoviePreview } from '../../api/types'
+import { IMoviePreview } from '../../types/movie'
 import styles from './styles.module.scss'
-
-const imgNoFind =
-  'https://www.brdtex.com/wp-content/uploads/2019/09/no-image-480x480.png'
+import noImagePng from '../../assets/images/no-image.png'
 
 interface IMoviePreviewProps extends IMoviePreview {
   onClick: (id: string) => void
 }
-// TODO add memo
 const MoviePreview: React.FC<IMoviePreviewProps> = ({
   poster,
   title,
@@ -21,7 +18,7 @@ const MoviePreview: React.FC<IMoviePreviewProps> = ({
   return (
     <div className={styles.movie} onClick={handleClick}>
       <div className={styles.poster}>
-        <img src={poster !== 'N/A' ? poster : imgNoFind} alt="movie poster" />
+        <img src={poster !== 'N/A' ? poster : noImagePng} alt="movie poster" />
       </div>
       <div className={styles.content}>
         <div className={styles.title}>{title}</div>
