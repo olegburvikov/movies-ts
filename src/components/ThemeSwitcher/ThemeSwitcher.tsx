@@ -14,6 +14,9 @@ const ThemeSwitcher = () => {
       document.body.setAttribute('data-theme', currentTheme)
 
       setIsChecked(currentTheme === 'dark')
+    } else {
+      setIsChecked(false)
+      localStorage.setItem('theme', 'light')
     }
   }, [])
 
