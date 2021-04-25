@@ -1,7 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import Tag from '../../ui/Tag/Tag'
 import RandomMovieButton from '../RandomMovieButton/RandomMovieButton'
 import { Loader } from '../../ui/Loader/Loader'
 
@@ -16,6 +15,8 @@ import ImdbRating from '../../ui/ImdbRating/ImdbRating'
 import HeartButton from '../../ui/HeartButton/HeartButton'
 import { toast } from 'react-toastify'
 import Heading from '../../ui/Heading/Heading'
+import { SwitchTransition, CSSTransition } from 'react-transition-group'
+import TagsList from '../TagsList/TagsList'
 
 interface IParams {
   id: string
@@ -69,46 +70,67 @@ export const Movie = () => {
     }
   }, [isAuth, params.id])
 
-  return !loading && movie ? (
-    <div className={styles.movie}>
-      <div className={styles.left}>
-        <img
-          className={styles.poster}
-          src={movie.poster !== 'N/A' && movie.poster ? movie.poster : notImage}
-          alt="movie poster"
-        />
-        <div className={styles.random}>
-          <RandomMovieButton> Another random movie </RandomMovieButton>
-        </div>
-      </div>
-      <div className={styles.right}>
-        <Heading variant="h2" fontFamily="accent">
-          {movie.title}
-        </Heading>
-        <div className={styles.tags}>
-          <Tag>{movie.released}</Tag>
-          <Tag>{movie.genre}</Tag>
-          <Tag>{timePrettier(movie.runtime)}</Tag>
-          <Tag>{movie.country}</Tag>
-        </div>
+  if (!movie) return null
+  return (
+    <SwitchTransition>
+      <CSSTransition
+        mode="out-in"
+        key={!loading ? 'movie' : 'preloader'}
+        classNames="fade"
+        addEndListener={(node, done) =>
+          node.addEventListener('transitionend', done, false)
+        }
+      >
+        {!loading ? (
+          <div className="container">
+            <div className={styles.movie}>
+              <div className={styles.left}>
+                <img
+                  className={styles.poster}
+                  src={movie.poster !== 'N/A' ? movie.poster : notImage}
+                  alt="movie poster"
+                />
+                <div className={styles.random}>
+                  <RandomMovieButton> Another random movie </RandomMovieButton>
+                </div>
+              </div>
+              <div className={styles.right}>
+                <Heading variant="h2" fontFamily="accent">
+                  {movie.title}
+                </Heading>
+                <TagsList
+                  tags={[
+                    movie.released,
+                    movie.genre,
+                    timePrettier(movie.runtime),
+                    movie.country,
+                  ]}
+                />
 
-        <div className={styles.rating_wrapper}>
-          <ImdbRating value={movie.imdbRating} />
+                <div className={styles.rating_wrapper}>
+                  <ImdbRating value={movie.imdbRating} />
 
-          {isAuth && (
-            <HeartButton isActive={isFavorite} onClick={handleFavoriteClick} />
-          )}
-        </div>
+                  {isAuth && (
+                    <HeartButton
+                      isActive={isFavorite}
+                      onClick={handleFavoriteClick}
+                    />
+                  )}
+                </div>
 
-        <div className={styles.overview}>
-          <Heading variant="h5">Overview</Heading>
-          <div className={styles.plot}>{movie.plot}</div>
-        </div>
-      </div>
-    </div>
-  ) : (
-    <div className={styles.loaderWrapper}>
-      <Loader />
-    </div>
+                <div className={styles.content}>
+                  <Heading variant="h5">Overview</Heading>
+                  <div className={styles.text}>{movie.plot}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className={styles.loaderWrapper}>
+            <Loader />
+          </div>
+        )}
+      </CSSTransition>
+    </SwitchTransition>
   )
 }

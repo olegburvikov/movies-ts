@@ -6,10 +6,17 @@
   outline: none;
   svg {
     transition: all .3s;
+    fill: none;
+    path {
+      stroke: var(--color-accent);
+    }
+  }
+  &.active svg {
+    fill: var(--color-accent);
   }
   &:hover {
     svg {
-      transform: scale(1.4);
+      transform: scale(1.2);
     }
   }
 }

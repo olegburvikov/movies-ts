@@ -10,6 +10,15 @@
   align-items: center;
 }
 
+.switcher {
+  margin-left: 32px;
+}
+
+.left_side {
+  display: flex;
+  align-items: center;
+}
+
 .right_side {
   display: flex;
   align-items: center;
@@ -22,14 +31,13 @@
   justify-content: center;
   align-items: center;
   border:none;
-  outline: none;
 
   svg {
     path {
       transition: .3s;
     }
     &:hover path {
-      fill: var(--primary-text);
+      fill: var(--text-color);
     }
   }
 }

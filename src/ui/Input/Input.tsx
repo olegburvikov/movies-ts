@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './styles.module.scss'
+import styles from './Input.module.scss'
 
 interface IInputProps {
   value: string
@@ -17,15 +17,14 @@ function Input({
   autoFocus = false,
 }: IInputProps) {
   return (
-    <div className={styles.wrapper}>
-      <input
-        autoFocus={autoFocus}
-        value={value}
-        onChange={onChange}
-        type={type}
-        placeholder={placeholder}
-      />
-    </div>
+    <input
+      className={styles.input}
+      autoFocus={autoFocus}
+      value={value}
+      onChange={onChange}
+      type={type}
+      placeholder={placeholder}
+    />
   )
 }
 

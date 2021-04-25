@@ -1,4 +1,5 @@
 .favorites_list {
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -11,7 +12,7 @@
   transition: all .3s;
   &:hover {
     cursor: pointer;
-    background: #fefdf6;
+    background: var(--color-second-bg-lighten);
   }
   border-radius: 4px;
   padding: 10px;
@@ -33,7 +34,7 @@
   font-family: Playfair Display, sans-serif;
   font-size: 37.77px;
   line-height: 50px;
-  color: var(--primary-text);
+  color: var(--text-color);
 }
 
 .tags {

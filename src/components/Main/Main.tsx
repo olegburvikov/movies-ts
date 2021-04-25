@@ -20,7 +20,7 @@ const Main: React.FC = () => {
           <RandomMovieButton> Random movie </RandomMovieButton>
         </div>
       </div>
-      <div>
+      <div className={styles.poster}>
         <PreviewSvg />
       </div>
     </div>

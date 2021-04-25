@@ -1,8 +1,18 @@
 :root {
   --color-bg: #f9f7e8;
-  --color-accent: #17C37B;
-  --primary-text: #1b1d1c;
+  --color-second-bg: #efe8d8;
+  --color-second-bg-lighten: #f7f7f7;
+  --color-accent: #8774E1;
+  --text-color: #1b1d1c;
   --primary-font: 'Inter', sans-serif;
   --second-font: 'Roboto', sans-serif;
   --accent-font: 'Playfair Display', serif;
+}
+
+
+[data-theme="dark"] {
+  --color-bg: #18191A;
+  --color-second-bg: #242526;
+  --color-second-bg-lighten: #292b2b;
+  --text-color: #F5F6F7;
 }

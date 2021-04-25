@@ -7,7 +7,7 @@
   right: 0;
   position: absolute;
   border-radius: 4px;
-  background: #FFF;
+  background: var(--color-second-bg);
   padding: 6px 0;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.02);
 }
@@ -26,6 +26,6 @@
   cursor: pointer;
   transition: .3s;
   &:hover {
-    background: #eeeeee;
+    background: var(--color-second-bg-lighten);
   }
 }

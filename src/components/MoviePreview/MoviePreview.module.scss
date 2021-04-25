@@ -1,7 +1,7 @@
 .movie {
   display: flex;
   padding: 10px 10px;
-  border-bottom: 1px solid #d9d7c6;
+  border-bottom: 1px solid var(--color-second-bg);
   .poster {
     padding-right: 35px;
     img {
@@ -18,25 +18,15 @@
       font-weight: bold;
       font-size: 22px;
       line-height: 24px;
-      color: var(--primary-text);
+      color: var(--text-color);
       padding-bottom: 7px;
     }
   }
-  .tab {
-    background: #efe8d8;
-    border-radius: 10px;
-    display: inline-block;
-    padding: 8px;
-    font-size: 14px;
-    line-height: 17px;
-    color: var(--primary-text);
-  }
 
-  // effects
   transition: background 0.3s;
   cursor: pointer;
   &:hover {
-    background: #d9d7c6;
+    background: var(--color-second-bg-lighten);
   }
 }
 

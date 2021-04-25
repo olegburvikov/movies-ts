@@ -1,15 +1,14 @@
 .button {
   border: none;
-  background: #ffffff;
+  background: var(--color-second-bg);
   display: flex;
   align-items: center;
-
+  border-radius: 4px;
   padding: 8px 22px;
 
   font-size: 14px;
-  color: #777777;
+  color: var(--text-color);
   font-weight: 500;
-
   cursor: pointer;
   img {
     margin-right: 15px;

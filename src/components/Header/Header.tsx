@@ -14,6 +14,7 @@ import FilmSearch from '../FilmSearch/FilmSearch'
 import { Search } from '../../ui/icons/Icons'
 import { toast } from 'react-toastify'
 import cn from 'classnames'
+import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'
 
 export default function Header() {
   const dispatch = useDispatch()
@@ -37,7 +38,12 @@ export default function Header() {
       {isSearchOpen && <FilmSearch />}
 
       <div className={cn(styles.header_wrapper, 'container')}>
-        <Logo />
+        <div className={styles.left_side}>
+          <Logo />
+          <div className={styles.switcher}>
+            <ThemeSwitcher />
+          </div>
+        </div>
         <div className={styles.right_side}>
           <button
             style={{ marginRight: 20 }}

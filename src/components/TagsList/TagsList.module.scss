@@ -1,0 +1,24 @@
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  & > div:not(last-child) {
+    margin-top: 10px;
+    margin-right: 14px;
+  }
+}
+
+
+
+@media screen and (max-width: 800px) {
+  .tags {
+    overflow: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 15px;
+    & > div {
+      white-space: nowrap;
+      &:not(last-child) {
+        margin-right: 14px;
+      }
+    }
+  }
+}

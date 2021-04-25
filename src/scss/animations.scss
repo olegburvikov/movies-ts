@@ -1,0 +1,21 @@
+// fade animation
+.fade-enter{
+  opacity: 0;
+  transform: scale(.9);
+}
+.fade-exit{
+  opacity: 1;
+  transform: scale(1);
+}
+.fade-enter-active{
+  opacity: 1;
+  transform: scale(1);
+}
+.fade-exit-active{
+  opacity: 0;
+  transform: scale(.9);
+}
+.fade-enter-active,
+.fade-exit-active{
+  transition: opacity 500ms, transform 500ms;
+}

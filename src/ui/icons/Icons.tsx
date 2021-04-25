@@ -10,7 +10,6 @@ export const HeartIcon: React.FC<{ fill?: string }> = ({ fill = 'none' }) => {
       viewBox="0 0 57 48"
     >
       <path
-        stroke="red"
         strokeWidth="5"
         d="M53.516 9.738c-9-20.5-25 1.5-25 1.5s-16-22-25-1.5 25 36.5 25 36.5 34-16 25-36.5z"
       />
@@ -21,6 +20,7 @@ export const HeartIcon: React.FC<{ fill?: string }> = ({ fill = 'none' }) => {
 interface ISvgProps {
   size?: number
   fill?: string
+  stroke?: string
 }
 
 export const Search: React.FC<ISvgProps> = ({
@@ -42,3 +42,17 @@ export const Search: React.FC<ISvgProps> = ({
     </svg>
   )
 }
+
+export const Triangle: React.FC<ISvgProps> = ({
+  size = 24,
+  fill = '#000000',
+  stroke = '#000000',
+}) => (
+  <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none">
+    <path
+      d="M21.4802 11.1305L3.95503 1.60599C2.62235 0.881713 1 1.84647 1 3.36324V20.8884C1 22.3444 2.50608 23.3124 3.83058 22.7078L21.3557 14.7072C22.856 14.0223 22.9292 11.9181 21.4802 11.1305Z"
+      fill={fill}
+      stroke={stroke}
+    />
+  </svg>
+)

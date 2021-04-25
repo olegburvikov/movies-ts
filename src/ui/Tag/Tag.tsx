@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './styles.module.scss'
+import styles from './Tag.module.scss'
 
 const Tag: React.FC = ({ children }) => {
   if (children === 'N/A' || !children) return null

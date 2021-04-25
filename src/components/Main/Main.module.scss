@@ -9,7 +9,7 @@
   margin-bottom: 100px;
   max-width: 620px;
   padding-right: 20px;
-  color: var(--primary-text);
+  color: var(--text-color);
 
   .text {
     font-size: 20px;
@@ -22,8 +22,14 @@
 .button_wrapper {
   max-width: 300px;
 }
+.poster {
+  display: block;
+}
 
 @media screen and ( max-width: 800px ) {
+  .poster {
+    display: none;
+  }
   .preview {
     flex-direction: column;
   }

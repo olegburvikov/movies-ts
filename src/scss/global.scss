@@ -1,15 +1,15 @@
 @import "variables";
 @import "reset";
+@import "animations";
 
-body {
-  padding-bottom: 10px;
-}
+
 html,
 body,
 #root {
-  height: 100%;
+  min-height: 100vh;
   background: var(--color-bg);
-  color: var(--primary-text);
+  transition: background 300ms;
+  color: var(--text-color);
   font-family: var(--primary-font);
   font-weight: 400;
 }
@@ -17,6 +17,7 @@ body,
 #root {
   display: flex;
   flex-direction: column;
+  padding-bottom: 10px;
 }
 
 .container {
@@ -41,13 +42,6 @@ body,
   font-weight: bold;
   font-size: 67.77px;
   line-height: 90px;
-  color: var(--primary-text);
+  color: var(--text-color);
 }
 
-@media screen and (max-width: 700px) {
-  html,
-  body,
-  #root {
-    height: unset;
-  }
-}
