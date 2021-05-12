@@ -1,5 +1,5 @@
 import { IMovie } from '../types/movie'
-import { formatISO } from '../helpers/time.helper'
+import { formatISO } from '../helpers/time'
 import { IGoogleAuth } from '../types/api'
 
 export const postRequest = async (url: string, data: object) => {

@@ -1,3 +1,5 @@
+@import "../../scss/animations";
+
 .preview {
   display: flex;
   justify-content: space-between;
@@ -16,6 +18,27 @@
     font-weight: 500;
     line-height: 24px;
     margin-bottom: 30px;
+  }
+}
+
+.emoji {
+  display: inline-block;
+  margin-left: 10px;
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes slidein {
+  from {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  to {
+    transform: rotate(0deg);
   }
 }
 

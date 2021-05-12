@@ -1,7 +1,7 @@
 import React from 'react'
 import { IMovie } from '../../types/movie'
 import styles from './FavouritesList.module.scss'
-import { isoDatePrettier, timePrettier } from '../../helpers/time.helper'
+import { isoDatePrettier, timePrettier } from '../../helpers/time'
 import { useHistory } from 'react-router-dom'
 import TagsList from '../TagsList/TagsList'
 

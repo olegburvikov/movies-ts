@@ -38,6 +38,7 @@ const ThemeSwitcher = () => {
       className={cn(styles.switcher, { [styles.active]: isChecked })}
     >
       <input
+        readOnly
         className={styles.input}
         checked={isChecked}
         id="switch"

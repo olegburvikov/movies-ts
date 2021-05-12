@@ -5,7 +5,7 @@ import RandomMovieButton from '../RandomMovieButton/RandomMovieButton'
 import Heading from '../../ui/Heading/Heading'
 
 const Main: React.FC = () => {
-  const title = 'Hello! ✌'
+  const title = 'Hello!'
   const description =
     'Our service was created to help you quickly find out information about\n' +
     'films, in order to read about a film, just enter its name in the\n' +
@@ -14,7 +14,10 @@ const Main: React.FC = () => {
   return (
     <div className={styles.preview}>
       <div className={styles.greet}>
-        <Heading variant="h1">{title}</Heading>
+        <Heading variant="h1">
+          <span>{title}</span>
+          <span className={styles.emoji}>👋</span>
+        </Heading>
         <div className={styles.text}>{description}</div>
         <div className={styles.button_wrapper}>
           <RandomMovieButton> Random movie </RandomMovieButton>

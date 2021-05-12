@@ -19,3 +19,17 @@
 .fade-exit-active{
   transition: opacity 500ms, transform 500ms;
 }
+
+// greed animation
+
+@keyframes emoji-animation {
+  from {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  to {
+    transform: rotate(-10deg);
+  }
+}

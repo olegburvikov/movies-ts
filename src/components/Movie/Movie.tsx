@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import RandomMovieButton from '../RandomMovieButton/RandomMovieButton'
 import { Loader } from '../../ui/Loader/Loader'
 
-import { timePrettier } from '../../helpers/time.helper'
+import { timePrettier } from '../../helpers/time'
 import { RootState } from '../../redux/reducers/root.reducer'
 import { checkIsFavourite, getMovieById } from '../../api/get'
 import { postFavoriteMovie } from '../../api/post'
@@ -35,7 +35,6 @@ export const Movie = () => {
   const [movie, setMovie] = React.useState<MovieType>(null)
   const [loading, setLoading] = React.useState(true)
   const [isFavorite, setIsFavorite] = React.useState(false)
-
   const handleFavoriteClick = () => {
     if (movie) {
       if (isFavorite) {
@@ -69,7 +68,6 @@ export const Movie = () => {
       })
     }
   }, [isAuth, params.id])
-
   if (!movie) return null
   return (
     <SwitchTransition>

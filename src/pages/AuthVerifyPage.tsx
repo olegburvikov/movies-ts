@@ -1,11 +1,11 @@
-import { googleAuth } from '../api/post'
-import { getQuery } from '../helpers/api.hepler'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { userLogin } from '../redux/actions/user.action'
 import { Loader } from '../ui/Loader/Loader'
 import { toast } from 'react-toastify'
+import { googleAuth } from '../api/post'
+import { getQuery } from '../helpers/api'
 
 export default function AuthVerifyPage() {
   const history = useHistory()

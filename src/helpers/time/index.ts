@@ -23,7 +23,10 @@ export function timePrettier(string: string): string {
 }
 
 export function formatISO(string: string): string {
-  return new Date(string).toISOString().substring(0, 10)
+  console.log(string)
+  const result = new Date(string).toISOString().substring(0, 10)
+  console.log(result)
+  return result
 }
 
 export function isoDatePrettier(date: string): string {
