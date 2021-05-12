@@ -3,3 +3,7 @@ export const getQuery = (query: string): string | null => {
   const searchUrl = new URL(href).searchParams
   return searchUrl.get(query)
 }
+
+export const getToken = (): string | null => {
+  return JSON.parse(localStorage.getItem('token') || 'null')
+}

@@ -1,5 +1,6 @@
 import CONST from '../const'
 import { getMe } from '../../api/get'
+import { getToken } from '../../helpers/api'
 
 interface IUserLogin {
   token: string
@@ -9,7 +10,7 @@ interface IUserLogin {
 }
 
 export const setIsUserLogged = () => (dispatch: any) => {
-  const token = JSON.parse(localStorage.getItem('token') || 'null')
+  const token = getToken()
   if (token) {
     getMe().then((data) => {
       if (data.ok) {
