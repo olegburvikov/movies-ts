@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import { userLogin } from '../redux/actions/user.action'
 import { Loader } from '../ui/Loader/Loader'
 import { toast } from 'react-toastify'
-import { googleAuth } from '../api/post'
+import { googleAuth } from '../api/rest/auth'
 import { getQuery } from '../helpers/api'
 
 export default function AuthVerifyPage() {
@@ -14,19 +14,15 @@ export default function AuthVerifyPage() {
 
   React.useEffect(() => {
     if (code) {
-      googleAuth({
-        code,
-        redirect_uri: process.env.REACT_APP_REDIRECT_URI || '',
-      }).then((data) => {
-        if (data.ok) {
-          toast(`👽 You are successfully logged in!`)
-          dispatch(
-            userLogin({
-              token: data.accessToken,
-              ...data,
-            })
-          )
-        }
+      const redirect_uri = process.env.REACT_APP_REDIRECT_URI || ''
+      googleAuth({ code, redirect_uri }).then((data) => {
+        toast(`👽 You are successfully logged in!`)
+        dispatch(
+          userLogin({
+            token: data.accessToken,
+            ...data,
+          })
+        )
         history.push('/')
       })
     }

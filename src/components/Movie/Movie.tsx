@@ -3,12 +3,14 @@ import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import RandomMovieButton from '../RandomMovieButton/RandomMovieButton'
 import { Loader } from '../../ui/Loader/Loader'
-
 import { timePrettier } from '../../helpers/time'
 import { RootState } from '../../redux/reducers/root.reducer'
-import { checkIsFavourite, getMovieById } from '../../api/get'
-import { postFavoriteMovie } from '../../api/post'
-import { deleteFavouriteRequest } from '../../api/delete'
+import {
+  checkIsFavourite,
+  postFavoriteMovie,
+  deleteFavourite,
+} from '../../api/rest/favourites'
+import { getMovieById } from '../../api/rest/omdb'
 import styles from './styles.module.scss'
 import { IMovie } from '../../types/movie'
 import ImdbRating from '../../ui/ImdbRating/ImdbRating'
@@ -36,22 +38,22 @@ export const Movie = () => {
   const [loading, setLoading] = React.useState(true)
   const [isFavorite, setIsFavorite] = React.useState(false)
   const handleFavoriteClick = () => {
-    if (movie) {
-      if (isFavorite) {
-        deleteFavouriteRequest(movie.imdbID).then((data) => {
-          if (data.ok) {
-            toast(`👍 ${movie.title} removed from favourite!`)
-            setIsFavorite(false)
-          }
-        })
-      } else {
-        postFavoriteMovie(movie).then((data) => {
-          if (data.ok) {
-            toast(`👍 ${movie.title} added to favourite!`)
-            setIsFavorite(true)
-          }
-        })
-      }
+    if (!movie) return
+
+    if (isFavorite) {
+      deleteFavourite(movie.imdbID).then((data) => {
+        if (data.ok) {
+          toast(`👍 ${movie.title} removed from favourite!`)
+          setIsFavorite(false)
+        }
+      })
+    } else {
+      postFavoriteMovie(movie).then((data) => {
+        if (data.ok) {
+          toast(`👍 ${movie.title} added to favourite!`)
+          setIsFavorite(true)
+        }
+      })
     }
   }
 

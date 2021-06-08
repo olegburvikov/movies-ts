@@ -8,6 +8,7 @@ export default function Logo() {
   const logoText = 'Fmovie'
   return (
     <Link to="/">
+
       <span className={styles.logo}>
         <span className={styles.logo_text}>{logoText}</span>
         <Triangle fill={color} stroke={color} />

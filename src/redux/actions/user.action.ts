@@ -1,5 +1,5 @@
 import CONST from '../const'
-import { getMe } from '../../api/get'
+import { getMe } from '../../api/rest/auth'
 import { getToken } from '../../helpers/api'
 
 interface IUserLogin {

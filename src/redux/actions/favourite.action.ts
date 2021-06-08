@@ -1,5 +1,5 @@
 import { FAVOURITE } from '../const'
-import { getFavourites } from '../../api/get'
+import { getFavourites } from '../../api/rest/favourites'
 
 export const deleteFavourite = (id: string) => {
   return {

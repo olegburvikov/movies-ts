@@ -1,17 +1,4 @@
-const monthsList = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
-]
+import { monthsList } from '../../constans/time.constatns'
 
 export function timePrettier(string: string): string {
   const time: number = parseInt(string.split(' ')[0])
@@ -19,14 +6,17 @@ export function timePrettier(string: string): string {
   const hours: number = Math.floor(time / 60)
   const minutes: number = time - hours * 60
 
-  return hours < 1 ? `${minutes}m` : `${hours}h ${minutes}m`
+  if (hours < 1) {
+    return `${minutes}m`
+  } else {
+    const minutesString = minutes ? ` ${minutes}m` : ''
+    return `${hours}h${minutesString}`
+  }
 }
 
 export function formatISO(string: string): string {
   console.log(string)
-  const result = new Date(string).toISOString().substring(0, 10)
-  console.log(result)
-  return result
+  return new Date(string).toISOString().substring(0, 10)
 }
 
 export function isoDatePrettier(date: string): string {
