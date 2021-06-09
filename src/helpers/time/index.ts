@@ -15,7 +15,6 @@ export function timePrettier(string: string): string {
 }
 
 export function formatISO(string: string): string {
-  console.log(string)
   return new Date(string).toISOString().substring(0, 10)
 }
 
