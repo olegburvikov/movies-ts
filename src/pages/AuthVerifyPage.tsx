@@ -16,7 +16,7 @@ export default function AuthVerifyPage() {
     if (code) {
       const redirect_uri = process.env.REACT_APP_REDIRECT_URI || ''
       googleAuth({ code, redirect_uri }).then((data) => {
-        toast(`👽 You are successfully logged in!`)
+        toast.dark(`👽 You are successfully logged in!`)
         dispatch(
           userLogin({
             token: data.accessToken,

@@ -41,18 +41,14 @@ export const Movie = () => {
     if (!movie) return
 
     if (isFavorite) {
-      deleteFavourite(movie.imdbID).then((data) => {
-        if (data.ok) {
-          toast(`👍 ${movie.title} removed from favourite!`)
-          setIsFavorite(false)
-        }
+      deleteFavourite(movie.imdbID).then(() => {
+        toast.dark(`👍 ${movie.title} removed from favourite!`)
+        setIsFavorite(false)
       })
     } else {
-      postFavoriteMovie(movie).then((data) => {
-        if (data.ok) {
-          toast(`👍 ${movie.title} added to favourite!`)
-          setIsFavorite(true)
-        }
+      postFavoriteMovie(movie).then(() => {
+        toast.dark(`👍 ${movie.title} added to favourite!`)
+        setIsFavorite(true)
       })
     }
   }

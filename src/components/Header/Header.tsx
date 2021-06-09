@@ -25,7 +25,7 @@ export default function Header() {
   )
 
   const handleLogout = (): void => {
-    toast(`😰 You are successfully log out!`)
+    toast.dark(`😰 You are successfully logged out!`)
     dispatch(userLogout())
   }
 
