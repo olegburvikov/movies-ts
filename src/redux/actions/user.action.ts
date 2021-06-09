@@ -1,6 +1,7 @@
 import CONST from '../const'
 import { getMe } from '../../api/rest/auth'
 import { getToken } from '../../helpers/api'
+import { Dispatch } from 'react'
 
 interface IUserLogin {
   token: string
@@ -9,16 +10,16 @@ interface IUserLogin {
   avatar: string
 }
 
-export const setIsUserLogged = () => (dispatch: any) => {
+export const setIsUserLogged = () => (dispatch: Dispatch<any>) => {
   const token = getToken()
   if (token) {
-    getMe().then((data) => {
-      if (data.ok) {
+    getMe()
+      .then((data) => {
         dispatch(userLogin({ token, ...data }))
-      } else {
+      })
+      .catch(() => {
         dispatch(userLogout())
-      }
-    })
+      })
   } else {
     dispatch(userLogout())
   }

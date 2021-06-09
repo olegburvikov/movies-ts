@@ -1,5 +1,6 @@
 import { FAVOURITE } from '../const'
 import { getFavourites } from '../../api/rest/favourites'
+import { Dispatch } from 'react'
 
 export const deleteFavourite = (id: string) => {
   return {
@@ -8,13 +9,11 @@ export const deleteFavourite = (id: string) => {
   }
 }
 
-export const updateFavouriteAction = () => (dispatch: any) => {
+export const updateFavouriteAction = () => (dispatch: Dispatch<any>) => {
   getFavourites().then((data) => {
-    if (data.ok) {
-      dispatch({
-        type: FAVOURITE.GET,
-        payload: data.results,
-      })
-    }
+    dispatch({
+      type: FAVOURITE.GET,
+      payload: data.results,
+    })
   })
 }
