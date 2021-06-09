@@ -13,7 +13,7 @@ import './scss/global.scss'
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
-      <App />,
+      <App />
       <ToastContainer />
     </Provider>
   </BrowserRouter>,
