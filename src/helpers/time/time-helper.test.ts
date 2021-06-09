@@ -1,4 +1,4 @@
-import { formatISO, isoDatePrettier, timePrettier } from './'
+import { isoDatePrettier, timePrettier } from './'
 
 // timePrettier
 describe('timePrettier success cases', () => {
@@ -12,13 +12,6 @@ describe('timePrettier success cases', () => {
 
   test('24 min expect 24m', () => {
     expect(timePrettier('24 min')).toBe('24m')
-  })
-})
-
-// formatISO
-describe('formatISO success cases', () => {
-  test('179 min expect 2h 26m', () => {
-    expect(formatISO('179 min')).toBe('2h 59m')
   })
 })
 
